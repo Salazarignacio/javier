@@ -75,6 +75,16 @@
                 </div>
             </div>
         </div>
+        
+        <!-- Indicador de Scroll Animado -->
+        <div class="hero-scroll-indicator">
+            <a href="#catalog" aria-label="Desplazarse al Catálogo">
+                <div class="mouse-icon">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Explorar Catálogo</span>
+            </a>
+        </div>
     </section>
 
     <!-- ==========================================================================
@@ -113,9 +123,15 @@
             
             <div class="quality-layout">
                 <!-- Columna Izquierda: Imagen del Proceso -->
+                <!-- PENDIENTE: reemplazar por foto real del proceso de fabricación o taller -->
                 <div class="quality-image-side">
-                    <!-- REEMPLAZAR: foto real de fábrica -->
-                    <img src="./imagenes-productos/PHOTO-2026-06-18-18-14-25-removebg-preview.png" alt="Proceso de fabricación Javier Alto Rendimiento" class="quality-image">
+                    <div class="quality-placeholder">
+                        <svg class="quality-placeholder-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span class="quality-placeholder-text">Taller de Fabricación</span>
+                    </div>
                 </div>
                 
                 <!-- Columna Derecha: Características en Lista Vertical -->
@@ -291,6 +307,11 @@
                     <table class="modal-specs-table" id="modal-specs-table">
                         <!-- Injected by JS -->
                     </table>
+                </div>
+                <div class="modal-actions" style="margin-top: 24px;">
+                    <button id="modal-contact-btn" class="btn-card-primary" style="width: 100%; padding: 14px; font-size: 0.95rem; border-radius: 8px;">
+                        Preguntar por este Producto
+                    </button>
                 </div>
             </div>
         </div>

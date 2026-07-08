@@ -219,8 +219,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalTitle = document.getElementById("modal-title");
     const modalSpecsTable = document.getElementById("modal-specs-table");
     const modalCloseBtn = document.getElementById("modal-close-btn");
+    const modalContactBtn = document.getElementById("modal-contact-btn");
     const contactForm = document.getElementById("whatsapp-contact-form");
     const productSelect = document.getElementById("interested-product");
+    
+    let activeProductTitle = "";
 
     // Populate contact form selector dynamically
     PRODUCTS_DATA.forEach(product => {
@@ -313,6 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const product = PRODUCTS_DATA.find(p => p.id === productId);
         if (!product) return;
 
+        activeProductTitle = product.title;
         modalTitle.textContent = product.title;
         modalSpecsTable.innerHTML = "";
 
@@ -335,6 +339,19 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     modalCloseBtn.addEventListener("click", closeModal);
+
+    if (modalContactBtn) {
+        modalContactBtn.addEventListener("click", () => {
+            if (activeProductTitle) {
+                productSelect.value = activeProductTitle;
+            }
+            closeModal();
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+        });
+    }
     modalOverlay.addEventListener("click", (e) => {
         if (e.target === modalOverlay) {
             closeModal();
