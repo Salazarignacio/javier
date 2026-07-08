@@ -1,0 +1,58 @@
+Contexto: Sitio de "Javier Alto Rendimiento" (index.html, css/style.css, 
+js/app.js). Conseguí 8 fotos de producto con el fondo removido (PNG con 
+transparencia real), listas en la carpeta imagenes-productos/ con estos 
+nombres:
+
+- producto-01-esmaltada-290.png       (id 1, Línea Esmaltada 290)
+- producto-02-esmaltada-330.png       (id 2, Línea Esmaltada 330)
+- producto-03-esmaltada-350.png       (id 3, Línea Esmaltada 350)
+- producto-04-acero-inox-350.png      (id 4, Línea Acero Inoxidable 350)
+- producto-05-frigorifico-350.png     (id 5, Línea Frigorífico 350 — 
+  esta es también la imagen que usa el hero)
+- producto-06-picadora-42-monofasica.png   (id 6, Picadora Calibre 42 Monofásica)
+- producto-07-picadora-42-trifasica.png    (id 7, Picadora Calibre 42 Trifásica)
+- producto-08-picadora-42-altorendimiento.png (id 8, Picadora Calibre 42 Alto Rendimiento)
+
+Quiero que hagas SOLO esto:
+
+1. ACTUALIZAR RUTAS DE IMAGEN
+   - En js/app.js, reemplazá el campo "image" de cada producto en 
+     PRODUCTS_DATA por su nuevo PNG correspondiente (mapeo de arriba).
+   - En index.html, el <img> del hero (id="hero", dentro de 
+     .hero-image-wrapper) debe apuntar a producto-05-frigorifico-350.png.
+
+2. ADAPTAR EL TRATAMIENTO VISUAL DE LAS TARJETAS DE PRODUCTO
+   Estas imágenes ya NO son fotos a pantalla completa, son recortes con 
+   fondo transparente. El CSS actual de .product-img-box usa 
+   object-fit: cover, pensado para fotos que llenan todo el marco — con 
+   estas imágenes se van a ver mal (estiradas o cortadas).
+   - Cambiá .product-img-box img a object-fit: contain, con un padding 
+     interno (~24-32px) para que el producto no toque los bordes.
+   - Dale a .product-img-box un fondo con algo de diseño en vez de un 
+     color plano oscuro: un gradiente radial sutil (más claro en el 
+     centro, oscureciendo hacia los bordes) usando tonos de 
+     --color-bg-card y --color-bg-dark, para simular un "spotlight" 
+     detrás del producto. Esto es clave para que no se vea como 
+     "el producto flotando en la nada".
+   - Mantené la animación de zoom al hover que ya existe, ajustada si 
+     hace falta para que no se vea rara con object-fit: contain.
+
+3. ADAPTAR EL HERO
+   - El .hero-image-wrapper también usa object-fit: cover y un overlay 
+     con gradiente oscuro por abajo (.hero-image-overlay) pensado para 
+     una foto de fondo real. Como ahora es un PNG transparente, ese 
+     overlay va a quedar flotando sin fondo real debajo.
+   - Aplicá el mismo criterio de "spotlight" (gradiente radial de fondo) 
+     al .hero-image-wrapper, con object-fit: contain para la imagen.
+   - El texto de .hero-image-title / .hero-image-subtitle necesita ahora 
+     su propio fondo (una tarjeta pequeña con blur o color sólido 
+     semitransparente) en vez de depender del gradiente sobre foto, para 
+     seguir siendo legible.
+
+Restricciones:
+- No toques la sección #quality (esa imagen de fábrica es un placeholder 
+  aparte, no relacionado a este cambio).
+- No cambies la paleta de colores base ni la tipografía.
+- AnteS de aplicar los cambios de CSS, mostrame un preview o descripción 
+  de cómo va a quedar el "spotlight" para confirmar que no compite 
+  visualmente con el rojo de acento (--color-accent-red).
