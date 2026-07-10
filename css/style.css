@@ -3,26 +3,27 @@
    ========================================================================== */
 
 /* Google Fonts Import */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
     /* Color Palette */
     --color-bg-dark: #090a0f;
     --color-bg-card: #12141c;
-    --color-bg-card-hover: #181c28;
+    --color-bg-card-hover: #171b26;
     --color-text-primary: #f8fafc;
     --color-text-secondary: #94a3b8;
-    --color-accent-red: #e11d48;
-    --color-accent-red-hover: #be123c;
+    --color-accent-red: #f43f5e; /* Un rojo láser más brillante (rose-500) */
+    --color-accent-red-hover: #e11d48; /* (rose-600) */
     --color-ml-yellow: #fff159;
     --color-ml-text: #2d3748;
     --color-border: rgba(255, 255, 255, 0.08);
-    --color-border-hover: rgba(225, 29, 72, 0.4);
+    --color-border-hover: rgba(244, 63, 94, 0.4);
     
     /* Layout & Shadows */
     --font-primary: 'Outfit', sans-serif;
-    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
-    --shadow-glow: 0 0 20px rgba(225, 29, 72, 0.2);
+    --font-mono: 'Space Mono', monospace; /* Fuente técnica para especificaciones y tags */
+    --shadow-premium: 0 16px 36px -12px rgba(0, 0, 0, 0.85);
+    --shadow-glow: 0 0 25px rgba(244, 63, 94, 0.25);
     --border-radius: 12px;
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -183,8 +184,11 @@ body {
     min-height: 85vh;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at 70% 30%, rgba(225, 29, 72, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 10% 80%, rgba(30, 41, 59, 0.4) 0%, transparent 50%);
+    background: 
+        radial-gradient(circle at 75% 35%, rgba(244, 63, 94, 0.15) 0%, transparent 55%),
+        radial-gradient(circle at 15% 75%, rgba(30, 41, 59, 0.3) 0%, transparent 50%),
+        radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 28px 28px;
 }
 
 .hero-grid {
@@ -299,9 +303,9 @@ body {
     height: 480px;
     border-radius: var(--border-radius);
     overflow: hidden;
-    box-shadow: var(--shadow-premium);
+    box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), var(--shadow-glow);
     border: var(--color-border);
-    background: radial-gradient(circle at center, #252a3b 0%, var(--color-bg-card) 65%, var(--color-bg-dark) 100%);
+    background: radial-gradient(circle at center, rgba(244, 63, 94, 0.16) 0%, rgba(18, 20, 28, 0.8) 60%, var(--color-bg-dark) 100%);
 }
 
 .hero-image-wrapper img {
@@ -428,14 +432,14 @@ body {
 .product-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-border-hover);
-    box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.8), var(--shadow-glow);
+    box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.95), 0 0 20px rgba(244, 63, 94, 0.2);
 }
 
 .product-img-box {
     position: relative;
     width: 100%;
     height: 320px;
-    background: radial-gradient(circle at center, #1e2230 0%, var(--color-bg-card) 60%, var(--color-bg-dark) 100%);
+    background: radial-gradient(circle at center, rgba(244, 63, 94, 0.16) 0%, rgba(18, 20, 28, 0.8) 60%, var(--color-bg-dark) 100%);
     overflow: hidden;
     border-bottom: 1px solid var(--color-border);
 }
@@ -467,16 +471,18 @@ body {
 }
 
 .product-tag {
-    background: rgba(9, 10, 15, 0.8);
+    background: rgba(9, 10, 15, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid var(--color-border);
+    border: 1px solid rgba(244, 63, 94, 0.3);
     color: var(--color-text-primary);
     padding: 4px 10px;
     border-radius: 6px;
-    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .product-info {
@@ -494,25 +500,27 @@ body {
 }
 
 .product-subtitle {
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-accent-red);
     margin-bottom: 16px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .product-specs-preview {
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
 .spec-preview-item {
     display: flex;
     justify-content: space-between;
-    font-size: 0.85rem;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.04);
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
     padding-bottom: 4px;
 }
 
@@ -521,7 +529,7 @@ body {
 }
 
 .spec-preview-val {
-    font-weight: 500;
+    font-weight: 700;
     color: var(--color-text-primary);
 }
 
@@ -1029,72 +1037,52 @@ body {
     height: 450px;
     border: var(--color-border);
     box-shadow: var(--shadow-premium);
+    background-color: var(--color-bg-card);
 }
 
 .quality-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.85;
+    opacity: 0.75;
+    filter: grayscale(15%) contrast(105%);
     transition: var(--transition-smooth);
 }
 
 .quality-image-side:hover .quality-image {
-    transform: scale(1.03);
-    opacity: 1;
-}
-
-/* Placeholder para Ingeniería */
-.quality-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    background: radial-gradient(circle at center, #1e2230 0%, var(--color-bg-card) 60%, var(--color-bg-dark) 100%);
-    text-align: center;
-    padding: 32px;
-    transition: var(--transition-smooth);
-}
-
-.quality-placeholder-icon {
-    width: 80px;
-    height: 80px;
-    color: var(--color-text-secondary);
-    opacity: 0.6;
-    stroke-width: 1.2;
-    transition: var(--transition-smooth);
-    animation: spinGear 20s linear infinite;
-}
-
-.quality-placeholder-text {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    opacity: 0.7;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.quality-image-side:hover .quality-placeholder-icon {
-    color: var(--color-accent-red);
-    opacity: 0.95;
     transform: scale(1.05);
+    opacity: 0.95;
+    filter: grayscale(0%) contrast(100%);
 }
 
-.quality-image-side:hover .quality-placeholder {
-    background: radial-gradient(circle at center, #252a3b 0%, var(--color-bg-card) 65%, var(--color-bg-dark) 100%);
+.quality-image-overlay-text {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    right: 24px;
+    background: rgba(9, 10, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: var(--transition-smooth);
 }
 
-@keyframes spinGear {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.quality-image-side:hover .quality-image-overlay-text {
+    border-color: var(--color-accent-red);
+    box-shadow: 0 10px 25px rgba(244, 63, 94, 0.15);
+}
+
+.tech-tag {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    letter-spacing: 1px;
 }
 
 .quality-info-side {
