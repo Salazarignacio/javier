@@ -1014,7 +1014,11 @@ body {
     }
     
     .hero-actions {
-        justify-content: center;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
     }
     
     .hero-visual {
@@ -1358,8 +1362,10 @@ body {
     right: 0;
     width: 280px;
     height: 100vh;
-    background-color: var(--color-bg-card);
-    border-left: 1px solid var(--color-border);
+    background: rgba(18, 20, 28, 0.85); /* Glassmorphism */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(249, 115, 22, 0.25); /* Borde glowing naranja */
     z-index: 1050;
     padding: 100px 24px 32px 24px;
     display: flex;
@@ -1373,6 +1379,24 @@ body {
     transform: translateX(0);
     opacity: 1;
 }
+
+/* Animación en cascada de los items del menú móvil */
+.mobile-nav-menu li {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+}
+
+.mobile-nav-panel.active .mobile-nav-menu li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-nav-panel.active .mobile-nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav-panel.active .mobile-nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav-panel.active .mobile-nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav-panel.active .mobile-nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav-panel.active .mobile-nav-menu li:nth-child(5) { transition-delay: 0.3s; }
 
 /* Dark Backdrop Blur Overlay */
 .mobile-nav-overlay {
@@ -1552,4 +1576,34 @@ body {
 .filter-btn:active {
     transform: scale(0.94);
     transition: transform 0.05s ease;
+}
+
+/* ==========================================================================
+   AGREGADO: OPTIMIZACIONES CRÍTICAS MÓVILES (<480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    .form-input, .form-select, .form-textarea {
+        font-size: 16px !important; /* Evita auto-zoom de iOS en inputs */
+        padding: 14px 16px; /* Target de toque más cómodo */
+    }
+    
+    .contact-info-panel {
+        padding: 24px 16px;
+    }
+    
+    .contact-form-panel {
+        padding: 24px 16px;
+    }
+    
+    .catalog-section, .quality-section, .contact-section {
+        padding: 60px 0; /* Padding vertical más compacto en móviles */
+    }
+    
+    .section-title {
+        font-size: 1.8rem; /* Titulares más proporcionados */
+    }
 }
