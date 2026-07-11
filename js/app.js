@@ -1,12 +1,16 @@
-/* ==========================================================================
-   JAVASCRIPT INTERACTIVE LOGIC - JAVIER ALTO RENDIMIENTO
-   ========================================================================== */
+/**
+ * Javier Alto Rendimiento - Sitio Web Oficial (Rosario, Santa Fe)
+ * Lógica interactiva, filtros de catálogo, modal y carrusel.
+ * 
+ * Desarrollado por: Ignacio Salazar (Freelance Web Dev)
+ * Última modificación: Julio 2026
+ */
 
 // ==========================================================================
-// CONFIGURACIÓN DE CONTACTO CENTRALIZADA
+// CONFIGURACIÓN DE CONTACTO - IMPORTANTE: Reemplazar con el número del taller
 // ==========================================================================
-const WHATSAPP_PHONE = "5493410000000"; // Cambiar por el número real (sin símbolos, ej: 5493410000000)
-const WHATSAPP_DISPLAY = "+54 9 341 000-0000"; // Número en formato legible para la UI
+const WHATSAPP_PHONE = "5493410000000"; // Sin símbolos, ej: 5493410000000 (el 549 es obligatorio para AR)
+const WHATSAPP_DISPLAY = "+54 9 341 000-0000"; // Formato legible en pantalla
 const WHATSAPP_DEFAULT_MESSAGE = "Hola, quiero consultar por sus productos";
 
 // 1. DATA STORE: PRODUCTS DATA
@@ -233,8 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
         productSelect.appendChild(option);
     });
 
-    // 3. RENDER PRODUCTS
+    // 3. RENDER PRODUCTS - Generación dinámica de las tarjetas del catálogo
     const renderProducts = (filter = "all") => {
+        // console.log("Catálogo renderizado con filtro:", filter); // debug temporal
         productGrid.innerHTML = "";
         
         const filteredProducts = filter === "all" 
@@ -323,8 +328,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // 5. MODAL LOGIC (OPEN & CLOSE)
+    // 5. MODAL LOGIC (OPEN & CLOSE) - Ficha técnica emergente
     const openModal = (productId) => {
+        // console.log("Abriendo ficha técnica ID:", productId); // debug
         const product = PRODUCTS_DATA.find(p => p.id === productId);
         if (!product) return;
 
