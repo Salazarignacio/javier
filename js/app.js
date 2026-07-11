@@ -532,4 +532,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, { passive: true });
     }
+
+    // 12. HERO AUTOMATIC CAROUSEL
+    const slides = document.querySelectorAll(".hero-carousel-slide");
+    const indicators = document.querySelectorAll(".hero-carousel-indicators .indicator");
+    let currentSlide = 0;
+    const intervalTime = 4000; // 4 segundos por slide
+    let carouselInterval;
+
+    const showSlide = (index) => {
+        slides[currentSlide].classList.remove("active");
+        indicators[currentSlide].classList.remove("active");
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+        indicators[currentSlide].classList.add("active");
+    };
+
+    const nextSlide = () => {
+        showSlide(currentSlide + 1);
+    };
+
+    const startCarousel = () => {
+        carouselInterval = setInterval(nextSlide, intervalTime);
+    };
+
+    const stopCarousel = () => {
+        clearInterval(carouselInterval);
+    };
+
+    if (slides.length > 0) {
+        startCarousel();
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener("click", () => {
+                stopCarousel();
+                showSlide(index);
+                startCarousel();
+            });
+        });
+    }
 });

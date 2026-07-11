@@ -308,6 +308,22 @@ body {
     background: radial-gradient(circle at center, rgba(249, 115, 22, 0.16) 0%, rgba(18, 20, 28, 0.8) 60%, var(--color-bg-dark) 100%);
 }
 
+.hero-carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.8s ease;
+}
+
+.hero-carousel-slide.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
 .hero-image-wrapper img {
     width: 100%;
     height: 100%;
@@ -327,7 +343,7 @@ body {
 
 .hero-image-overlay {
     position: absolute;
-    bottom: 20px;
+    bottom: 38px; /* Shifted up to fit indicators */
     left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 40px);
@@ -338,6 +354,32 @@ body {
     border: 1px solid var(--color-border);
     border-radius: 8px;
     text-align: center;
+    z-index: 10;
+}
+
+.hero-carousel-indicators {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 20;
+}
+
+.hero-carousel-indicators .indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.hero-carousel-indicators .indicator.active {
+    background: var(--color-accent-red);
+    width: 24px;
+    border-radius: 4px;
 }
 
 .hero-image-title {
@@ -449,15 +491,16 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 28px;
-    object-position: center;
-    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.45));
+    padding: 0; /* Remove padding to maximize image area */
+    object-position: center bottom; /* Align to the bottom of the container */
+    transform: scale(1.15); /* Overflow card boundaries slightly */
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5));
     transition: var(--transition-smooth);
 }
 
 .product-card:hover .product-img-box img {
-    transform: scale(1.04);
-    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.60));
+    transform: scale(1.23) translateY(-4px); /* Zoom further and lift slightly on hover */
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.7));
 }
 
 .tags-container {
