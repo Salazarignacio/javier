@@ -237,10 +237,12 @@ body {
 }
 
 .hero-title .highlight {
-    background: linear-gradient(to right, var(--color-accent-red), #fda4af);
+    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
 
 .hero-desc {
     font-size: 1.1rem;
