@@ -282,6 +282,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 </div>
             `;
+            
+            // Efecto de spotlight interactivo 3D
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty("--mx", `${x}%`);
+                card.style.setProperty("--my", `${y}%`);
+            });
+            card.addEventListener("mouseleave", () => {
+                card.style.setProperty("--mx", "50%");
+                card.style.setProperty("--my", "50%");
+            });
+
             productGrid.appendChild(card);
         });
 
@@ -503,5 +517,19 @@ document.addEventListener("DOMContentLoaded", () => {
         mobileLinks.forEach(link => {
             link.addEventListener("click", closeMobileMenu);
         });
+    }
+
+    // 11. SCROLL INDICATOR FADEOUT
+    const scrollIndicator = document.querySelector(".hero-scroll-indicator");
+    if (scrollIndicator) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 80) {
+                scrollIndicator.style.opacity = "0";
+                scrollIndicator.style.pointerEvents = "none";
+            } else {
+                scrollIndicator.style.opacity = "1";
+                scrollIndicator.style.pointerEvents = "all";
+            }
+        }, { passive: true });
     }
 });
