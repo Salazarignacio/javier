@@ -15,6 +15,13 @@
     
     <!-- Style Sheets -->
     <link rel="stylesheet" href="./css/style.css">
+    
+    <!-- Script para evitar el "flash" de tema oscuro si se seleccionó tema claro -->
+    <script>
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-theme");
+        }
+    </script>
 </head>
 <body>
 
@@ -37,8 +44,20 @@
                 </ul>
             </nav>
             
+            <!-- Botón selector de Tema (Claro / Oscuro) -->
+            <button class="theme-toggle-btn" id="theme-toggle" aria-label="Cambiar tema de color">
+                <!-- Icono de Luna (para pasar a Modo Oscuro) -->
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                </svg>
+                <!-- Icono de Sol (para pasar a Modo Claro) -->
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m0 13.5V21M6.75 6.75l1.591 1.591m8.618 8.618l1.591 1.591M18 12h2.25M3 12h2.25m11.364-5.25l-1.591 1.591M6.75 17.25l1.591-1.591M12 7.5a4.5 4.5 0 100 9 4.5 4.5 0 000-9z" />
+                </svg>
+            </button>
+            
             <a href="#contact" class="nav-btn">Solicitar Cotización</a>
-
+            
             <!-- Botón de Hamburguesa Mobile -->
             <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú de navegación">
                 <span class="hamburger-bar"></span>

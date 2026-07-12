@@ -620,4 +620,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // 13. TEMA CLARO / OSCURO (THEME SWITCHER)
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener("click", () => {
+            const isLight = document.documentElement.classList.toggle("light-theme");
+            document.body.classList.toggle("light-theme", isLight);
+            
+            const theme = isLight ? "light" : "dark";
+            localStorage.setItem("theme", theme);
+        });
+        
+        // Sincronizar body en la carga inicial
+        if (document.documentElement.classList.contains("light-theme")) {
+            document.body.classList.add("light-theme");
+        }
+    }
 });

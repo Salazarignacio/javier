@@ -1831,3 +1831,218 @@ body {
     filter: grayscale(0) opacity(1); /* Sin escala de grises en móviles por falta de hover */
   }
 }
+
+/* ==========================================================================
+   AGREGADO: BOTÓN DE SELECTOR DE TEMA (CLARO / OSCURO)
+   ========================================================================== */
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
+  transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+  color: var(--color-accent-text);
+  border-color: var(--color-border-hover);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.sun-icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.moon-icon {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+/* Visibilidad de iconos según el tema activo */
+.light-theme .sun-icon {
+  display: none;
+}
+
+.light-theme .moon-icon {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    margin-left: auto; /* Alinear a la derecha al ocultar menú en móviles */
+    margin-right: 12px;
+  }
+}
+
+/* ==========================================================================
+   SISTEMA DE TEMA CLARO (LIGHT THEME OVERRIDES)
+   ========================================================================== */
+.light-theme {
+  --color-bg-dark: #f8fafc; /* Gris hospital/frigorífico impecable (slate-50) */
+  --color-bg-card: #ffffff; /* Tarjeta blanca */
+  --color-bg-card-hover: #f1f5f9; /* Gris suave (slate-100) */
+  --color-text-primary: #0f172a; /* Slate-900 */
+  --color-text-secondary: #475569; /* Slate-600 */
+  --color-border: rgba(37, 99, 235, 0.08);
+  --color-border-hover: rgba(37, 99, 235, 0.25);
+  --shadow-premium: 0 16px 36px -12px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
+  --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.12);
+}
+
+/* Ajustes particulares de contraste para el Tema Claro */
+.light-theme body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-primary);
+}
+
+.light-theme .site-header {
+  background: rgba(248, 250, 252, 0.85); /* Vidrio claro */
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.light-theme .theme-toggle-btn:hover {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+/* Ajuste del spotlight en las imágenes de catálogo para modo claro */
+.light-theme .product-img-box {
+  background: radial-gradient(
+    circle at var(--mx, 50%) var(--my, 50%),
+    rgba(37, 99, 235, 0.08) 0%,
+    rgba(255, 255, 255, 0.9) 60%,
+    var(--color-bg-dark) 100%
+  );
+}
+
+/* Ajuste del spotlight del carrusel en modo claro (Sin fondo blanco) */
+.light-theme .hero-image-wrapper {
+  background: radial-gradient(
+    circle at center,
+    rgba(37, 99, 235, 0.08) 0%,
+    transparent 70%
+  ) !important;
+  box-shadow: none;
+  border-color: transparent;
+}
+
+/* Corregir texto diamantado en modo claro (acero pavonado oscuro con brillo metálico cromo) */
+.light-theme .diamond-text {
+  background: linear-gradient(90deg, #0f172a 0%, #334155 35%, #64748b 50%, #334155 65%, #0f172a 100%) !important;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+}
+
+/* Corregir etiquetas de especificaciones del catálogo en modo claro (ej: 1.5HP, ESMALTADA) */
+.light-theme .product-tag {
+  background: rgba(37, 99, 235, 0.06);
+  border-color: rgba(37, 99, 235, 0.2);
+  color: var(--color-accent) !important;
+}
+
+.light-theme .hero-badge {
+  background: rgba(37, 99, 235, 0.06);
+  border-color: rgba(37, 99, 235, 0.15);
+  color: var(--color-accent);
+}
+
+/* Fondos y bordes de la modal de especificaciones */
+.light-theme .modal-overlay {
+  background: rgba(15, 23, 42, 0.4); /* Fondo semi-transparente oscuro */
+  backdrop-filter: blur(8px);
+}
+
+.light-theme .modal-content {
+  background-color: #ffffff;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.2);
+}
+
+.light-theme .modal-specs-table tr {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Modal de imagen completa */
+.light-theme #image-modal-overlay {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+.light-theme #image-modal-img {
+  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.08) 0%, rgba(255, 255, 255, 0.95) 70%, #f8fafc 100%);
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.35);
+}
+
+/* Tarjeta de contacto y paneles */
+.light-theme .contact-card {
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1);
+}
+
+.light-theme .contact-info-panel {
+  background-color: rgba(37, 99, 235, 0.02);
+  border-right: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+@media (max-width: 1024px) {
+  .light-theme .contact-info-panel {
+    border-right: none;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  }
+}
+
+.light-theme .form-input,
+.light-theme .form-select,
+.light-theme .form-textarea {
+  background-color: #ffffff;
+  color: #0f172a;
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+.light-theme .form-input:focus,
+.light-theme .form-select:focus,
+.light-theme .form-textarea:focus {
+  background-color: #ffffff;
+  border-color: var(--color-accent);
+}
+
+.light-theme .quality-image-overlay-text {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(37, 99, 235, 0.15);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+}
+
+.light-theme .quality-image-side:hover .quality-image-overlay-text {
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
+}
+
+.light-theme .mobile-nav-panel {
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.light-theme .mobile-nav-link {
+  color: #475569;
+}
+
+.light-theme .mobile-nav-link:hover,
+.light-theme .mobile-nav-link.active {
+  color: var(--color-accent);
+}
+
+.light-theme .footer-section {
+  background-color: #f1f5f9;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.light-theme .footer-bottom {
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
