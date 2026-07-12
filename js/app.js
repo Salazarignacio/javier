@@ -281,8 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="product-actions">
                         <button class="btn-card-primary view-specs-btn" data-id="${product.id}">Ficha Técnica</button>
                         <a href="${product.mlLink}" target="_blank" class="btn-card-ml">
-                            <img src="./mercado-libre.png" alt="Mercado Libre" style="width: 24px; height: 24px; object-fit: contain;">
-                            Ver en Mercado Libre
+                        Ver en Mercado Libre
+                            <img src="./mercado-libre.png" alt="Mercado Libre" class="btn-ml-icon">
+                            
                         </a>
                     </div>
                 </div>
