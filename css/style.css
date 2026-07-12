@@ -183,7 +183,7 @@ body {
 
 .nav-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
 }
 
 /* ==========================================================================
@@ -229,9 +229,9 @@ body {
 }
 
 .hero-badge {
-  background: rgba(225, 29, 72, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   color: var(--color-accent-text);
-  border: 1px solid rgba(225, 29, 72, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -303,7 +303,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
 }
 
 .btn-secondary {
@@ -643,12 +643,12 @@ body {
   font-size: 0.85rem;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(225, 29, 72, 0.2);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
   transition: var(--transition-smooth);
 }
 
 .btn-card-primary:hover {
-  box-shadow: 0 6px 15px rgba(225, 29, 72, 0.35);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.35);
   transform: translateY(-1px);
 }
 
@@ -827,7 +827,7 @@ body {
   outline: none;
   border-color: var(--color-accent-text);
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(225, 29, 72, 0.15);
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.15);
 }
 
 .form-select option {
@@ -859,7 +859,7 @@ body {
 
 .btn-form-submit:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
 }
 
 /* ==========================================================================
@@ -1277,18 +1277,18 @@ body {
   height: 48px;
   flex-shrink: 0;
   border-radius: 8px;
-  background: rgba(225, 29, 72, 0.1);
+  background: rgba(37, 99, 235, 0.1);
   color: var(--color-accent-text);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(225, 29, 72, 0.2);
+  border: 1px solid rgba(37, 99, 235, 0.2);
 }
 
 .quality-icon-box-small svg {
   width: 22px;
   height: 22px;
-  stroke-width: 0.1;
+  stroke-width: 1.8;
 }
 
 .quality-content-box {
@@ -1617,7 +1617,7 @@ body {
 
 .mobile-nav-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
 }
 
 /* Responsive updates */
@@ -2083,4 +2083,11 @@ body {
   color: white;
   border-color: var(--color-accent);
   box-shadow: var(--shadow-glow);
+}
+
+/* Ajuste de iconos de la sección ingeniería en tema claro */
+.light-theme .quality-icon-box-small {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.2);
+  color: var(--color-accent);
 }
