@@ -224,6 +224,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalSpecsTable = document.getElementById("modal-specs-table");
     const modalCloseBtn = document.getElementById("modal-close-btn");
     const modalContactBtn = document.getElementById("modal-contact-btn");
+    
+    // Modal de imagen completa
+    const imageModalOverlay = document.getElementById("image-modal-overlay");
+    const imageModalImg = document.getElementById("image-modal-img");
+    const imageModalCloseBtn = document.getElementById("image-modal-close-btn");
+    
     const contactForm = document.getElementById("whatsapp-contact-form");
     const productSelect = document.getElementById("interested-product");
     
@@ -267,7 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.innerHTML = `
                 <div class="product-img-box">
-                    <img src="${product.image}" alt="${product.title}">
+                    <img src="${product.image}" alt="${product.title}" class="product-clickable-img" style="cursor: pointer;">
                     <div class="tags-container">
                         ${tagsHtml}
                     </div>
@@ -311,6 +317,14 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.addEventListener("click", (e) => {
                 const id = parseInt(e.target.getAttribute("data-id"));
                 openModal(id);
+            });
+        });
+
+        // Add event listeners to clickable product images
+        const clickableImages = document.querySelectorAll(".product-clickable-img");
+        clickableImages.forEach(img => {
+            img.addEventListener("click", (e) => {
+                openImageModal(e.target.src);
             });
         });
     };
@@ -377,10 +391,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Close modal on Escape key press
+    // Image modal functions
+    const openImageModal = (src) => {
+        imageModalImg.src = src;
+        imageModalOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeImageModal = () => {
+        imageModalOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+    };
+
+    if (imageModalCloseBtn) {
+        imageModalCloseBtn.addEventListener("click", closeImageModal);
+    }
+    if (imageModalOverlay) {
+        imageModalOverlay.addEventListener("click", (e) => {
+            if (e.target === imageModalOverlay) {
+                closeImageModal();
+            }
+        });
+    }
+
+    // Close modals on Escape key press
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modalOverlay.classList.contains("active")) {
-            closeModal();
+        if (e.key === "Escape") {
+            if (modalOverlay.classList.contains("active")) {
+                closeModal();
+            }
+            if (imageModalOverlay && imageModalOverlay.classList.contains("active")) {
+                closeImageModal();
+            }
         }
     });
 
