@@ -522,8 +522,8 @@ body {
 }
 
 .product-img-box img {
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   object-fit: contain;
   padding: 0; /* Remove padding to maximize image area */
   object-position: center bottom; /* Align to the bottom of the container */
