@@ -1935,10 +1935,11 @@ body {
   border-color: transparent;
 }
 
-/* Corregir texto diamantado en modo claro (acero pavonado oscuro con brillo metálico cromo) */
-.light-theme .diamond-text {
-  background: linear-gradient(90deg, #0f172a 0%, #334155 35%, #64748b 50%, #334155 65%, #0f172a 100%) !important;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.15));
+/* Corregir texto del titular en modo claro (acero pavonado oscuro para máxima legibilidad) */
+.light-theme .hero-title span {
+  background: linear-gradient(to right, #0f172a, #334155) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 /* Corregir etiquetas de especificaciones del catálogo en modo claro (ej: 1.5HP, ESMALTADA) */
