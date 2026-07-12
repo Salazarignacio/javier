@@ -17,10 +17,11 @@
   --color-text-primary: #f8fafc;
   --color-text-secondary: #94a3b8;
   --color-accent: #2563eb; /* Azul Cobalto / Acero Templado (blue-600) */
-  --color-accent-hover: #1d4ed8; /* (sky-600) */
+  --color-accent-hover: #1d4ed8; /* (blue-700) */
+  --color-accent-text: #60a5fa; /* Azul Cobalto Claro para textos sueltos */
   --color-ml-yellow: #fff159;
   --color-ml-text: #2d3748;
-  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border: rgba(37, 99, 235, 0.12); /* Borde entintado en azul */
   --color-border-hover: rgba(37, 99, 235, 0.4);
 
   /* Layout & Shadows */
@@ -113,7 +114,7 @@ body {
 }
 
 .logo-main span {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .logo-sub {
@@ -149,7 +150,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-text);
   transition: var(--transition-smooth);
 }
 
@@ -228,7 +229,7 @@ body {
 
 .hero-badge {
   background: rgba(225, 29, 72, 0.1);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   border: 1px solid rgba(225, 29, 72, 0.2);
   padding: 6px 14px;
   border-radius: 20px;
@@ -474,7 +475,7 @@ body {
 .filter-btn.active {
   background: var(--color-accent);
   color: white;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-text);
   box-shadow: var(--shadow-glow);
 }
 
@@ -579,7 +580,7 @@ body {
 .product-subtitle {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -718,7 +719,7 @@ body {
 }
 
 .contact-subtitle {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -758,7 +759,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .meta-icon svg {
@@ -814,7 +815,7 @@ body {
 .form-select:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-text);
   background-color: rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 10px rgba(225, 29, 72, 0.15);
 }
@@ -923,7 +924,7 @@ body {
 }
 
 .modal-close-btn:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 .modal-close-btn svg {
@@ -1220,7 +1221,7 @@ body {
 }
 
 .quality-image-side:hover .quality-image-overlay-text {
-  border-color: var(--color-accent);
+  border-color: var(--color-accent-text);
   box-shadow: 0 10px 25px rgba(14, 165, 233, 0.15);
 }
 
@@ -1267,7 +1268,7 @@ body {
   flex-shrink: 0;
   border-radius: 8px;
   background: rgba(225, 29, 72, 0.1);
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1307,7 +1308,7 @@ body {
 }
 
 .meta-link:hover {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
 }
 
 /* Contenedor del Mapa */
@@ -1582,7 +1583,7 @@ body {
 
 .mobile-nav-link:hover,
 .mobile-nav-link.active {
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   padding-left: 8px;
 }
 
@@ -1661,7 +1662,7 @@ body {
 .mouse-icon .wheel {
   width: 4px;
   height: 8px;
-  background-color: var(--color-accent);
+  background-color: var(--color-accent-text);
   border-radius: 2px;
   position: absolute;
   top: 6px;
