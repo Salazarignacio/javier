@@ -23,6 +23,7 @@
   --color-ml-text: #2d3748;
   --color-border: rgba(37, 99, 235, 0.12); /* Borde entintado en azul */
   --color-border-hover: rgba(37, 99, 235, 0.4);
+  --color-bg-section: rgba(18, 20, 28, 0.3);
 
   /* Layout & Shadows */
   --font-primary: "Outfit", sans-serif;
@@ -433,7 +434,7 @@ body {
    ========================================================================== */
 .catalog-section {
   padding: 100px 0;
-  background-color: rgba(18, 20, 28, 0.3);
+  background-color: var(--color-bg-section);
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
 }
@@ -1906,6 +1907,7 @@ body {
   --color-border-hover: rgba(37, 99, 235, 0.25);
   --shadow-premium: 0 16px 36px -12px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
   --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.12);
+  --color-bg-section: rgba(37, 99, 235, 0.025); /* Mezcla sutil de azul cobalto con el fondo claro */
 }
 
 /* Ajustes particulares de contraste para el Tema Claro */
@@ -2036,6 +2038,10 @@ body {
   box-shadow: 0 10px 25px rgba(37, 99, 235, 0.08);
 }
 
+.light-theme .quality-list-item {
+  background: var(--color-bg-card);
+}
+
 .light-theme .mobile-nav-panel {
   background: rgba(255, 255, 255, 0.9);
   border-left: 1px solid rgba(15, 23, 42, 0.08);
@@ -2050,11 +2056,31 @@ body {
   color: var(--color-accent);
 }
 
-.light-theme .footer-section {
+.light-theme .site-footer {
   background-color: #f1f5f9;
   border-top: 1px solid rgba(15, 23, 42, 0.06);
 }
 
 .light-theme .footer-bottom {
   border-top: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Ajustes de botones de filtro en tema claro */
+.light-theme .filter-btn {
+  background: rgba(15, 23, 42, 0.03);
+  border-color: rgba(15, 23, 42, 0.08);
+  color: var(--color-text-secondary);
+}
+
+.light-theme .filter-btn:hover {
+  color: var(--color-text-primary);
+  border-color: rgba(37, 99, 235, 0.25);
+  background: rgba(37, 99, 235, 0.04);
+}
+
+.light-theme .filter-btn.active {
+  background: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-glow);
 }
