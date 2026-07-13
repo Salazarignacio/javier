@@ -7,29 +7,29 @@
  */
 
 /* Google Fonts Import */
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap");
 
 :root {
   /* Color Palette */
-  --color-bg-dark: #090a0f;
-  --color-bg-card: #12141c;
-  --color-bg-card-hover: #171b26;
+  --color-bg-dark: #111215; /* Carbon Black */
+  --color-bg-card: #1a1b20; /* Slate Iron */
+  --color-bg-card-hover: #22242a; /* Light Iron */
   --color-text-primary: #f8fafc;
   --color-text-secondary: #94a3b8;
-  --color-accent: #2563eb; /* Azul Cobalto / Acero Templado (blue-600) */
-  --color-accent-hover: #1d4ed8; /* (blue-700) */
-  --color-accent-text: #60a5fa; /* Azul Cobalto Claro para textos sueltos */
+  --color-accent: #e11f05; /* Naranja Industrial (orange-600) */
+  --color-accent-hover: #b81400; /* (orange-700) */
+  --color-accent-text: #f04430; /* Naranja de alta legibilidad (orange-500) */
   --color-ml-yellow: #fff159;
   --color-ml-text: #2d3748;
-  --color-border: rgba(37, 99, 235, 0.12); /* Borde entintado en azul */
-  --color-border-hover: rgba(37, 99, 235, 0.4);
+  --color-border: rgba(225, 31, 5, 0.12); /* Borde entintado en naranja */
+  --color-border-hover: rgba(225, 31, 5, 0.4);
 
   /* Layout & Shadows */
   --font-primary: "Outfit", sans-serif;
-  --font-mono:
-    "Space Mono", monospace; /* Fuente técnica para especificaciones y tags */
+  --font-headings: "Barlow Condensed", sans-serif; /* Tipografía industrial para títulos */
+  --font-mono: "Space Mono", monospace;
   --shadow-premium: 0 16px 36px -12px rgba(0, 0, 0, 0.85);
-  --shadow-glow: 0 0 25px rgba(37, 99, 235, 0.25);
+  --shadow-glow: 0 0 25px rgba(225, 31, 5, 0.25);
   --border-radius: 12px;
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -182,7 +182,7 @@ body {
 
 .nav-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 5px 15px rgba(225, 31, 5, 0.4);
 }
 
 /* ==========================================================================
@@ -197,8 +197,8 @@ body {
   background:
     radial-gradient(
       circle at 75% 35%,
-      rgba(14, 165, 233, 0.18) 0%,
-      rgba(14, 165, 233, 0.04) 45%,
+      rgba(225, 31, 5, 0.18) 0%,
+      rgba(225, 31, 5, 0.04) 45%,
       transparent 70%
     ),
     radial-gradient(
@@ -228,9 +228,9 @@ body {
 }
 
 .hero-badge {
-  background: rgba(225, 29, 72, 0.1);
+  background: rgba(225, 31, 5, 0.1);
   color: var(--color-accent-text);
-  border: 1px solid rgba(225, 29, 72, 0.2);
+  border: 1px solid rgba(225, 31, 5, 0.2);
   padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -293,7 +293,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 8px 20px rgba(225, 31, 5, 0.4);
 }
 
 .btn-secondary {
@@ -332,7 +332,7 @@ body {
   overflow: hidden;
   /* box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.95), var(--shadow-glow);
     border: var(--color-border);
-    background: radial-gradient(circle at center, rgba(14, 165, 233, 0.16) 0%, rgba(18, 20, 28, 0.8) 60%, var(--color-bg-dark) 100%); */
+    background: radial-gradient(circle at center, rgba(225, 31, 5, 0.16) 0%, rgba(18, 20, 28, 0.8) 60%, var(--color-bg-dark) 100%); */
 }
 
 .hero-carousel-slide {
@@ -503,7 +503,7 @@ body {
   border-color: var(--color-border-hover);
   box-shadow:
     0 20px 45px -12px rgba(0, 0, 0, 0.95),
-    0 0 20px rgba(14, 165, 233, 0.2);
+    0 0 20px rgba(225, 31, 5, 0.2);
 }
 
 .product-img-box {
@@ -512,7 +512,7 @@ body {
   height: 320px;
   background: radial-gradient(
     circle at var(--mx, 50%) var(--my, 50%),
-    rgba(14, 165, 233, 0.22) 0%,
+    rgba(225, 31, 5, 0.22) 0%,
     rgba(18, 20, 28, 0.85) 60%,
     var(--color-bg-dark) 100%
   );
@@ -552,7 +552,7 @@ body {
   background: rgba(9, 10, 15, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(14, 165, 233, 0.3);
+  border: 1px solid rgba(225, 31, 5, 0.3);
   color: var(--color-text-primary);
   padding: 4px 10px;
   border-radius: 6px;
@@ -633,12 +633,12 @@ body {
   font-size: 0.85rem;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(225, 29, 72, 0.2);
+  box-shadow: 0 4px 10px rgba(225, 31, 5, 0.2);
   transition: var(--transition-smooth);
 }
 
 .btn-card-primary:hover {
-  box-shadow: 0 6px 15px rgba(225, 29, 72, 0.35);
+  box-shadow: 0 6px 15px rgba(225, 31, 5, 0.35);
   transform: translateY(-1px);
 }
 
@@ -695,7 +695,7 @@ body {
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(14, 165, 233, 0.03) 100%
+    rgba(225, 31, 5, 0.03) 100%
   );
   border-top: 1px solid var(--color-border);
 }
@@ -817,7 +817,7 @@ body {
   outline: none;
   border-color: var(--color-accent-text);
   background-color: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(225, 29, 72, 0.15);
+  box-shadow: 0 0 10px rgba(225, 31, 5, 0.15);
 }
 
 .form-select option {
@@ -849,7 +849,7 @@ body {
 
 .btn-form-submit:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 8px 18px rgba(225, 31, 5, 0.4);
 }
 
 /* ==========================================================================
@@ -1211,7 +1211,7 @@ body {
   background: rgba(9, 10, 15, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(14, 165, 233, 0.3);
+  border: 1px solid rgba(225, 31, 5, 0.3);
   padding: 12px 18px;
   border-radius: 8px;
   text-align: center;
@@ -1222,7 +1222,7 @@ body {
 
 .quality-image-side:hover .quality-image-overlay-text {
   border-color: var(--color-accent-text);
-  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.15);
 }
 
 .tech-tag {
@@ -1266,19 +1266,29 @@ body {
   width: 48px;
   height: 48px;
   flex-shrink: 0;
-  border-radius: 8px;
-  background: rgba(225, 29, 72, 0.1);
+  border-radius: 6px;
+  background: rgba(225, 31, 5, 0.08);
   color: var(--color-accent-text);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgba(225, 29, 72, 0.2);
+  border: 1px solid rgba(225, 31, 5, 0.25);
+  transition: var(--transition-smooth);
 }
 
 .quality-icon-box-small svg {
-  width: 22px;
-  height: 22px;
-  stroke-width: 0.1;
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.8;
+  transition: var(--transition-smooth);
+}
+
+.quality-list-item:hover .quality-icon-box-small {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(225, 31, 5, 0.4);
+  transform: scale(1.08);
 }
 
 .quality-content-box {
@@ -1495,7 +1505,7 @@ body {
   background: rgba(18, 20, 28, 0.85); /* Glassmorphism */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-left: 1px solid rgba(37, 99, 235, 0.25); /* Borde glowing titanio */
+  border-left: 1px solid rgba(225, 31, 5, 0.25); /* Borde glowing titanio */
   z-index: 1050;
   padding: 100px 24px 32px 24px;
   display: flex;
@@ -1607,7 +1617,7 @@ body {
 
 .mobile-nav-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(225, 29, 72, 0.4);
+  box-shadow: 0 5px 15px rgba(225, 31, 5, 0.4);
 }
 
 /* Responsive updates */
@@ -1788,7 +1798,7 @@ body {
   object-fit: contain;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-premium);
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, rgba(18, 20, 28, 0.95) 70%, #090a0f 100%);
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.04) 0%, rgba(26, 27, 32, 0.98) 75%, #111215 100%);
   border: 1px solid var(--color-border);
   padding: 24px;
 }
@@ -1813,4 +1823,37 @@ body {
 #image-modal-close-btn:hover {
   color: var(--color-accent-text);
   border-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   AGREGADO: TIPOGRAFÍA INDUSTRIAL & PLANO TÉCNICO CAD
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+.logo-main, .logo-sub,
+.nav-link, .nav-btn, .mobile-nav-btn,
+.btn-primary, .btn-secondary, .btn-card-primary, .btn-form-submit,
+.scroll-text, .hero-badge, .contact-subtitle, .product-tag, .filter-btn {
+  font-family: var(--font-headings) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.blueprint-grid {
+  position: relative;
+}
+
+.blueprint-grid::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
 }
